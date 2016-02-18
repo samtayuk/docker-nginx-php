@@ -1,0 +1,3 @@
+nginx: nginx
+phpfpm: php5-fpm -FR
+cron: cron -f
