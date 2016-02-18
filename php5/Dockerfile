@@ -3,11 +3,9 @@ MAINTAINER Samuel Taylor "samtaylor.uk@gmail.com"
 
 ENV NGINX_VERSION 1.9.10-1+trusty0
 
-# To get rid of error messages like "debconf: unable to initialize frontend: Dialog":
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-
 # Install wget and install Nginx
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C \
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
+    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C \
     && echo "deb http://ppa.launchpad.net/nginx/development/ubuntu trusty main" >> /etc/apt/sources.list \
     && echo "deb http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu trusty main" >> /etc/apt/sources.list \
