@@ -54,8 +54,8 @@ COPY Procfile /app/
 WORKDIR /app/
 
 COPY index.php /app/www/
-COPY default.conf /etc/nginx/conf.d
-#COPY php.ini /etc/php/7.0/fpm/conf.d/40-custom.ini
+COPY default.conf /etc/nginx/conf.d/
+COPY php.ini /etc/php/7.0/fpm/conf.d/40-custom.ini
 
 EXPOSE 80 443
 

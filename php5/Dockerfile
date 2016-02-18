@@ -30,7 +30,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C \
       php5-cli \
       php5-memcached \
       php5-apcu \
-      php-redis \
+      php5-redis \
       git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
@@ -55,7 +55,7 @@ COPY Procfile /app/
 WORKDIR /app/
 
 COPY index.php /app/www/
-COPY default.conf /etc/nginx/conf.d
+COPY default.conf /etc/nginx/conf.d/
 COPY php.ini /etc/php5/fpm/conf.d/40-custom.ini
 
 EXPOSE 80 443
