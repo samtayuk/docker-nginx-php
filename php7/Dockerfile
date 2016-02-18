@@ -2,9 +2,7 @@ FROM samtayuk/nginx:1.9
 MAINTAINER Samuel Taylor "samtaylor.uk@gmail.com"
 
 # Install php7
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C \
-    && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C \
-    && echo "deb http://ppa.launchpad.net/nginx/development/ubuntu trusty main" >> /etc/apt/sources.list \
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C \
     && echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu trusty main" >> /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y -q --no-install-recommends \ 
